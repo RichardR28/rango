@@ -23,6 +23,7 @@
                             <li class="list-group-item justify-content-between">
                                 <a href="{% url 'show_category' category.slug %}"> {{ category.name }}</a>
                                 <span class="badge badge-default badge-pill">{{ category.likes }}</span>
+{#                                <span class="badge badge-default badge-pill">{{ category.views }}</span>#}
                             </li>
                         {% endfor %}
                     </ul>

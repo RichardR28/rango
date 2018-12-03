@@ -1,8 +1,6 @@
 from django.shortcuts import render
 from ..forms import UserForm, UserProfileForm
 
-#TODO refatorar essa função de acordo com o vídeo do Henrique Bastos
-
 def register(request):
     registered = False
 

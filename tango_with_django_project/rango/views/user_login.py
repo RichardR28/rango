@@ -15,9 +15,9 @@ def user_login(request):
                 login(request, user)
                 return HttpResponseRedirect(reverse('index'))
             else:
-                return HttpResponse("Sua conta no Rango está desabilitada.")
+                return HttpResponse("Sua conta no Rango esta desabilitada.")
         else:
-            print("Detalhes de login inválidos: {0}, {1}".format(username, password))
-            return HttpResponse("Detalhes de login inválido fornecidos.")
+            print("Detalhes de login invalidos: {0}, {1}".format(username, password))
+            return HttpResponse("Detalhes de login invalido fornecidos.")
     else:
         return render(request, 'rango/login.html', {})

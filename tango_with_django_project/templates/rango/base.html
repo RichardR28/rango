@@ -2,7 +2,6 @@
 
 {% load staticfiles %}
 {% load rango_template_tags %}
-<!-- TODO colocar css e js estático -->
 
 <html lang="en">
 <head>
@@ -56,7 +55,18 @@
     <div class="row">
         <div class="col-sm-3 col-md-2 sidebar pl-3">
             {% block sidebar_block %}
-                {% get_category_list category %}
+                {#                {% get_category_list category %}#}
+                <ul class="nav nav-list flex-column">
+                    <li class="nav-item">Type to find a category</li>
+                    <form>
+                        <li class="nav-item"><input class="search-query form-control" type="text"
+                                                    name="suggestion" value="" id="suggestion" />
+                        </li>
+                    </form>
+                </ul>
+                <hr>
+                <div id="cats">
+                </div>
             {% endblock sidebar_block%}
         </div>
         <div class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 main">
@@ -69,6 +79,8 @@
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="{% static 'js/jquery.min.js' %}"> </script>
+<script src="{% static "js/rango-ajax.js" %}"></script>
+<script src="{% static 'js/rango-jquery.js' %}"> </script>
 <script src="{% static 'js/bootstrap.min.js' %}"> </script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="{% static 'js/ie10-viewport-bug-workaround.js' %}"> </script>

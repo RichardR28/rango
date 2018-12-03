@@ -7,7 +7,7 @@ def index(request):
     # print('Categorias: ', len(category_list), ':', category_list)
 
     page_list = Page.objects.order_by('-views')[:5]
-    # print('Páginas: ', len(page_list), ':', page_list)
+    # print('Paginas: ', len(page_list), ':', page_list)
 
     context_dict = {'categories': category_list, 'pages': page_list}
     return render(request, 'rango/index.html', context=context_dict)
